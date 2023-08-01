@@ -6,7 +6,8 @@
 
 :root {
 	--ff-primary: 'Bona Nova', serif;
-	--ff-secondary: 'Noto Sans JP', sans-serif;
+	/*--ff-secondary: 'Noto Sans JP', sans-serif;*/
+	--ff-secondary: Arial, Helvetica, sans-serif;
 	--ff-bold: 'Anton', sans-serif;
 
 	--fw-reg: 300;
