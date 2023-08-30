@@ -56,7 +56,7 @@ a{
 a:hover{
 	/* color: #21D0B2; */
 	color: #F4B400;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 hr.rounded {
