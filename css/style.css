@@ -127,6 +127,12 @@ h3 { font-size: var(--fs-h3) }
 	font-family: var(--ff-primary);
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
 
 .intro_sec {
 	position: relative;
