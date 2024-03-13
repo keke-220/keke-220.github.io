@@ -24,14 +24,15 @@
 	--fs-body: 0.7rem;
 }
 
-@media (min-width: 600px) {
-	:root {
-		--fs-h1: 1.75rem;
-		--fs-h2: 1.5rem;
-		--fs-h3: 1.25rem;
-		--fs-body: 0.9rem;
-	}
+/* @media (min-width: 600px) { */
+:root {
+	--fs-h1: 1.75rem;
+	--fs-h2: 1.5rem;
+	--fs-h3: 1.25rem;
+	--fs-body: 0.9rem;
 }
+
+/* } */
 
 li {
 	display: table-cell;
@@ -84,9 +85,9 @@ strong {
 	font-weight: var(--fw-bold)
 }
 
-h1,
+/* h1,
 h2,
-h3 {}
+h3 {} */
 
 h1 {
 	font-size: var(--fs-h1)
@@ -149,100 +150,103 @@ h3 {
 	position: relative;
 }
 
-@media (min-width: 50px) {
+/* @media (min-width: 50px) { */
 
-	.intro_sec {
-		margin: 0 auto;
-		padding-bottom: 1em;
-		padding-top: 1em;
-	}
-
-
-	.intro_image {
-		margin-left: 2em;
-		float: right;
-		max-width: 25%;
-		min-width: 100px;
-		margin-bottom: 0.25em;
-		margin-top: 0.25em;
-	}
-
-
-
-	.social_list {
-		text-align: left;
-	}
-
-	.intro_content {
-		margin: 0;
-		text-align: left;
-	}
+.intro_sec {
+	margin: 0 auto;
+	padding-bottom: 1em;
+	padding-top: 1em;
 }
+
+
+.intro_image {
+	margin-left: 2em;
+	float: right;
+	max-width: 25%;
+	min-width: 100px;
+	margin-bottom: 0.25em;
+	margin-top: 0.25em;
+}
+
+
+
+.social_list {
+	text-align: left;
+}
+
+.intro_content {
+	margin: 0;
+	text-align: left;
+}
+
+/* } */
 
 .pub_sec {
 	position: relative;
 }
 
-@media (min-width: 200px) {
+/* @media (min-width: 200px) { */
 
-	.pub_sec {
-		padding-bottom: 1em;
-	}
-
-	.pub_type {}
-
-	.pub_type_title {
-		margin-left: 0em;
-		margin-top: 0;
-	}
-
-	.a_pub {
-		display: block;
-		margin-top: 0em;
-		margin-left: 0em;
-		margin-bottom: 2.2em;
-		min-height: 130px;
-	}
-
-	.pub_image {
-		margin-left: 1.5em;
-		float: right;
-		max-width: 25%;
-		min-width: 100px;
-		margin-bottom: 0.5em;
-	}
-
-	.paper_title {
-		margin: 0;
-		/* color: #8A64D6; */
-		color: #4285F4;
-	}
-
-	.author {
-		margin: 0;
-	}
-
-	.conf {
-		margin: 0;
-		font-style: italic;
-
-	}
-
-	.pub_link {
-		margin: 0;
-	}
+.pub_sec {
+	padding-bottom: 1em;
 }
+
+/* .pub_type {} */
+
+.pub_type_title {
+	margin-left: 0em;
+	margin-top: 0;
+}
+
+.a_pub {
+	display: block;
+	margin-top: 0em;
+	margin-left: 0em;
+	margin-bottom: 2.2em;
+	min-height: 130px;
+}
+
+.pub_image {
+	margin-left: 1.5em;
+	float: right;
+	max-width: 25%;
+	min-width: 100px;
+	margin-bottom: 0.5em;
+}
+
+.paper_title {
+	margin: 0;
+	/* color: #8A64D6; */
+	color: #4285F4;
+}
+
+.author {
+	margin: 0;
+}
+
+.conf {
+	margin: 0;
+	font-style: italic;
+
+}
+
+.pub_link {
+	margin: 0;
+}
+
+/* } */
 
 .news_sec {
 	position: relative;
 }
 
-@media (min-width: 200px) {
-	.news_sec {
-		padding-bottom: 1em;
-	}
-
-	.a_news {
-		margin: 0;
-	}
+/* @media (min-width: 200px) { */
+.news_sec {
+	padding-bottom: 1em;
 }
+
+.a_news {
+	margin: 0;
+}
+
+/* } */
