@@ -220,6 +220,16 @@ h3 {
 	min-height: 130px;
 }
 
+@media only screen and (max-width: 600px) {
+	.a_pub {
+		display: block;
+		margin-top: 0em;
+		margin-left: 0em;
+		margin-bottom: 1em;
+		min-height: 130px;
+	}
+}
+
 .pub_image {
 	margin-left: 1.5em;
 	float: right;
