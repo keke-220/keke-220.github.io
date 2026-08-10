@@ -1,432 +1,924 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Xiaohan Zhang</title>
-
-    <meta name="author" content="Xiaohan Zhang">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta name="author" content="Xiaohan Zhang">
+    <meta name="description"
+        content="Xiaohan Zhang is a senior research scientist at Sudo AI working on robot learning, planning, and foundation models.">
+    <meta name="theme-color" content="#ffffff">
 
+    <title>Xiaohan Zhang | Robotics &amp; AI Researcher</title>
+
+    <link rel="icon" href="images/self_round.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Philosopher:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var theme = "light";
+
+            root.classList.add("js");
+
+            try {
+                var savedTheme = localStorage.getItem("xz-theme");
+
+                if (savedTheme === "light" || savedTheme === "dark") {
+                    theme = savedTheme;
+                }
+            } catch (error) {
+                // Storage can be unavailable in privacy-restricted contexts.
+            }
+
+            root.dataset.theme = theme;
+            document.querySelector('meta[name="theme-color"]').content =
+                theme === "light" ? "#ffffff" : "#000000";
+        }());
+    </script>
+    <script src="site.js" defer></script>
 </head>
 
-<body>
-    <table
-        style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-            <tr style="padding:0px">
-                <td style="padding:0px">
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr style="padding:0px">
-                                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                                    <p class="name" style="text-align: center;">
-                                        Xiaohan Zhang
-                                    </p>
-                                    <p> I am currently a robotics researcher at <a
-                                            href="https://theaiinstitute.com/">Boston Dynamics AI Institute</a>.
+<body id="top" data-view="about">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-                                    </p>
-                                    <p>
-                                        I completed my PhD in Computer Science at the State University of New York at
-                                        Binghamton, advised by <a href="http://www.cs.binghamton.edu/~szhang/">Shiqi
-                                            Zhang</a>. In the summer and fall of 2023, I was a
-                                        Research
-                                        Scientist Intern in
-                                        the Embodied AI team at <a href="https://ai.meta.com/research/">Meta AI
-                                            (FAIR)</a> working with <a href="https://cpaxton.github.io/about/">Chris
-                                            Paxton</a>. In the spring of 2023, I spent time visiting
-                                        the
-                                        Learning Agents Research Group (LARG) at the University of
-                                        Texas at Austin, supervised by <a
-                                            href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a>. In the summer
-                                        of 2022,
-                                        I was a Student Researcher with the Robotics team at <a
-                                            href="https://deepmind.google/">Google DeepMind</a>.
-                                        I obtained my bachelor's degree
-                                        from Renmin University of China in 2019.
-                                    </p>
-                                    <p style="text-align:center">
-                                        <!-- <a href="xzhan1210@gmail.com">Email</a> &nbsp;/&nbsp; -->
-                                        <a href="pdfs/Xiaohan_Zhang_Resume.pdf">CV</a> &nbsp;/&nbsp;
-                                        <a href="https://scholar.google.com/citations?user=uWfcPkkAAAAJ&hl=en">Google
-                                            Scholar</a>
-                                        &nbsp;/&nbsp;
-                                        <a href="https://twitter.com/XiaohanZhang220">Twitter</a> &nbsp;/&nbsp;
-                                        <!-- <a href="https://github.com/keke-220">Github</a> &nbsp;/&nbsp; -->
-                                        <a href="https://www.linkedin.com/in/xiaohan-z/">LinkedIn</a> <br>
-                                        <strong>xzhan1210 at gmail dot com</strong>
-                                    </p>
-                                </td>
-                                <td style="padding:4%;width:40%;max-width:40%">
-                                    <a href="images/self_round.png"><img
-                                            style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;"
-                                            alt="profile photo" src="images/self_round.png" class="hoverZoomLink"></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:100%;vertical-align:middle">
-                                    <h2>Selected Research</h2>
-                                    <p>
-                                        My research is at the intersection of robotics and AI. My PhD thesis focuses on
-                                        Symbol Grounding and Task and Motion Planning (TAMP). More recently, I'm
-                                        interested in robotics foundation models.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#about" aria-label="Xiaohan Zhang, home">
+                XZ<span aria-hidden="true">.</span>
+            </a>
+            <nav aria-label="Primary navigation">
+                <ul class="nav-list">
+                    <li class="nav-about">
+                        <a href="#about" data-view-link="about" aria-current="page">About</a>
+                    </li>
+                    <li><a href="#experience" data-view-link="experience">Experience</a></li>
+                    <li><a href="#publications" data-view-link="publications">Publications</a></li>
+                    <li><a href="pdfs/Xiaohan_Zhang_Resume.pdf">CV (Jan. 2026)</a></li>
+                    <li class="theme-control">
+                        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"
+                            aria-pressed="false" title="Switch to dark mode">
+                            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"
+                                focusable="false">
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M12 2v2"></path>
+                                <path d="M12 20v2"></path>
+                                <path d="m4.93 4.93 1.42 1.42"></path>
+                                <path d="m17.66 17.66 1.41 1.41"></path>
+                                <path d="M2 12h2"></path>
+                                <path d="M20 12h2"></path>
+                                <path d="m6.34 17.66-1.41 1.41"></path>
+                                <path d="m19.07 4.93-1.41 1.41"></path>
+                            </svg>
+                            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"
+                                focusable="false">
+                                <path d="M20.99 12.49A9 9 0 1 1 11.51 3a7 7 0 0 0 9.48 9.49Z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/zerobot.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://ieeexplore.ieee.org/abstract/document/11373870/">
-                                        <span class="papertitle">ZeroBot: Learning from Scratch in Minutes with
-                                            Generative Real2Sim</span>
-                                    </a>
-                                    <br>
-                                    Ivan Kapelyukh,
-                                    <strong>Xiaohan Zhang</strong>,
-                                    Stephen James,
-                                    Laura Herlant,
-                                    Edward Johns
-                                    <br>
-                                    <em>IEEE Robotics and Automation Letters</em> (<strong>RA-L</strong>), 2026
-                                    <br>
-                                    <a href="https://ieeexplore.ieee.org/abstract/document/11373870/">IEEE</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <main id="main-content">
+        <section class="hero site-view is-active" id="about" data-view="about" aria-labelledby="page-title">
+            <div class="hero-inner">
+                <img class="hero-avatar" src="images/self_1.JPG" alt="Xiaohan Zhang" width="2770" height="2770">
+                <div class="hero-identity">
+                    <h1 id="page-title">Xiaohan Zhang</h1>
+                    <p class="hero-role">
+                        Senior Research Scientist at
+                        <a href="https://sudo.ai/">Sudo AI</a>
+                    </p>
+                </div>
+                <div class="hero-bio">
+                    <p>
+                        I am a Senior Research Scientist at <a href="https://sudo.ai/">Sudo AI</a>. Previously, I was
+                        a roboticist at the <a href="https://rai-inst.com/">Robotics &amp; AI Institute</a> (also known
+                        as the Boston Dynamics AI Institute). I completed my PhD in Computer Science at the State
+                        University of New York at Binghamton, advised by
+                        <a href="https://www.binghamton.edu/computer-science/people/profile.html?id=zhangs">Shiqi
+                            Zhang</a>. In the summer and fall of 2023,
+                        I was a Research Scientist Intern on the Embodied AI team at
+                        <a href="https://ai.meta.com/research/">Meta AI (FAIR)</a>, working with
+                        <a href="https://cpaxton.github.io/about/">Chris Paxton</a>. In spring 2023, I visited the
+                        Learning Agents Research Group (LARG) at <a href="https://www.utexas.edu/">UT Austin</a>,
+                        supervised by <a href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a>. In summer 2022, I
+                        was a Student Researcher with the Robotics team at
+                        <a href="https://deepmind.google/">Google DeepMind</a>. I received my bachelor's degree from
+                        <a href="https://en.ruc.edu.cn/">Renmin University of China</a> in 2019.
+                    </p>
+                    <p>
+                        My research is at the intersection of robotics and AI.
+                        My <a href="pdfs/dissertation.pdf">PhD thesis</a> focuses on Symbol Grounding and Task and Motion
+                        Planning (TAMP).
+                        More recently, I'm interested in robotics foundation models and reinforcement learning.
+                    </p>
+                </div>
+                <!-- Mail and graduation-cap icons use Lucide shapes (ISC license). -->
+                <ul class="profile-links">
+                    <li>
+                        <a href="mailto:xzhan1210@gmail.com" aria-label="Email" title="Email">
+                            <svg class="profile-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=uWfcPkkAAAAJ&amp;hl=en"
+                            aria-label="Google Scholar" title="Google Scholar">
+                            <svg class="profile-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path
+                                    d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                                </path>
+                                <path d="M22 10v6"></path>
+                                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/XiaohanZhang220" aria-label="X (Twitter)" title="X (Twitter)">
+                            <span class="profile-brand-icon" aria-hidden="true">X</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/xiaohan-z/" aria-label="LinkedIn" title="LinkedIn">
+                            <span class="profile-brand-icon profile-brand-linkedin" aria-hidden="true">in</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/anytask.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://arxiv.org/pdf/2512.17853">
-                                        <span class="papertitle">AnyTask: an Automated Task and Data Generation
-                                            Framework for Advancing Sim-to-Real Policy Learning</span>
-                                    </a>
-                                    <br>
-                                    Ran Gong*,
-                                    <strong>Xiaohan Zhang*</strong>,
-                                    Jinghuan Shang*,
-                                    Maria Vittoria Minniti*,
-                                    Jigarkumar Patel,
-                                    Valerio Pepe,
-                                    Riedana Yan,
-                                    Ahmet Gundogdu,
-                                    Ivan Kapelyukh,
-                                    Ali Abbas,
-                                    Xiaoqiang Yan,
-                                    Harsh Patel,
-                                    Laura Herlant,
-                                    Karl Schmeckpeper
-                                    <br>
-                                    <em>Preprint</em>, 2025
-                                    <br>
-                                    <a href="https://anytask.rai-inst.com">project page</a>
-                                    /
-                                    <a href="https://arxiv.org/abs/2512.17853">arXiv</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <section class="experience site-view" id="experience" data-view="experience"
+            aria-labelledby="experience-title">
+            <div class="experience-inner">
+                <header class="experience-intro">
+                    <h2 id="experience-title">Experience</h2>
+                </header>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/dagger.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://arxiv.org/pdf/2509.25466">
-                                        <span class="papertitle">Data-Efficient Multitask DAgger</span>
-                                    </a>
-                                    <br>
-                                    Haotian Fu,
-                                    Ran Gong,
-                                    <strong>Xiaohan Zhang</strong>,
-                                    Maria Vittoria Minniti,
-                                    Jigarkumar Patel,
-                                    Karl Schmeckpeper
-                                    <br>
-                                    <em>Preprint</em>, 2025
-                                    <br>
-                                    <a href="https://arxiv.org/abs/2509.25466">arXiv</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="experience-list">
+                    <article class="experience-item">
+                        <p class="experience-date">
+                            <time datetime="2026-06">Jun 2026</time> &ndash; Present
+                        </p>
+                        <span class="experience-marker" aria-hidden="true"></span>
+                        <div class="experience-content">
+                            <h3><a href="https://sudo.ai/">Sudo AI</a></h3>
+                            <p class="experience-role">Senior Research Scientist</p>
+                        </div>
+                    </article>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/particleformer.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://arxiv.org/pdf/2506.23126">
-                                        <span class="papertitle">ParticleFormer: A 3D Point Cloud World Model for
-                                            Multi-Object, Multi-Material Robotic Manipulation</span>
-                                    </a>
-                                    <br>
-                                    Suning Huang,
-                                    Qianzhong Chen,
-                                    <strong>Xiaohan Zhang</strong>,
-                                    Jiankai Sun,
-                                    Mac Schwager
-                                    <br>
-                                    <em>Conference on Robot Learning</em> (<strong>CoRL</strong>), 2025
-                                    <br>
-                                    <a href="https://suninghuang19.github.io/particleformer_page/">project page</a>
-                                    /
-                                    <a href="https://arxiv.org/abs/2506.23126">arXiv</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <article class="experience-item">
+                        <p class="experience-date">
+                            <time datetime="2024-05">May 2024</time> &ndash;
+                            <time datetime="2026-06">Jun 2026</time>
+                        </p>
+                        <span class="experience-marker" aria-hidden="true"></span>
+                        <div class="experience-content">
+                            <h3><a href="https://rai-inst.com/">Boston Dynamics AI Institute</a></h3>
+                            <p class="experience-role">Roboticist</p>
+                        </div>
+                    </article>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src='images/dkprompt.png' width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://arxiv.org/pdf/2406.17659">
-                                        <span class="papertitle">Prompting VLMs with and for Classical Planners</span>
-                                    </a>
-                                    <br>
-                                    <strong>Xiaohan Zhang</strong>,
-                                    <a href="https://sites.google.com/view/zainabaltaweel/">Zainab Altaweel*</a>,
-                                    <a href="https://yoheihayamizu.github.io/yhayamizu/">Yohei Hayamizu*</a>,
-                                    <a href="https://yding25.com/">Yan Ding</a>,
-                                    <a href="https://scholar.google.com/citations?user=zOfE-oUAAAAJ&hl=zh-CN">Saeid
-                                        Amiri</a>, <br>
-                                    Hao Yang,
-                                    Andy Kaminski,
-                                    Chad Esselink,
-                                    <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a>
-                                    <br>
-                                    <em>Preprint</em>, 2024
-                                    <br>
-                                    <a href="https://dkprompt.github.io">project page</a>
-                                    /
-                                    <a href="https://arxiv.org/pdf/2406.17659">arXiv</a>
-                                </td>
-                            </tr>
-                    </table>
+                    <article class="experience-item">
+                        <p class="experience-date">
+                            <time datetime="2023-05">May 2023</time> &ndash;
+                            <time datetime="2023-12">Dec 2023</time>
+                        </p>
+                        <span class="experience-marker" aria-hidden="true"></span>
+                        <div class="experience-content">
+                            <h3><a href="https://ai.meta.com/research/">Meta AI (FAIR)</a></h3>
+                            <p class="experience-role">Research Scientist Intern, Embodied AI</p>
+                        </div>
+                    </article>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <video poster="" autoplay loop muted width="160">
-                                        <source src="images/teaser-combined.mp4" type="video/mp4">
-                                    </video>
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://open-eqa.github.io/assets/pdfs/paper.pdf">
-                                        <span class="papertitle">OpenEQA: Embodied Question Answering in the Era of
-                                            Foundation Models</span>
-                                    </a>
-                                    <br>
-                                    <a href="https://arjunmajum.github.io/">Arjun Majumdar*</a>,
-                                    <a href="https://anuragajay.github.io/">Anurag Ajay*</a>,
-                                    <strong>Xiaohan Zhang*</strong>, et al.
-                                    <br>
-                                    <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>
-                                    (<strong>CVPR</strong>), 2024
-                                    <br>
-                                    <a href="https://open-eqa.github.io/">project page</a>
-                                    /
+                    <article class="experience-item">
+                        <p class="experience-date">
+                            <time datetime="2023-01">Jan 2023</time> &ndash;
+                            <time datetime="2023-04">Apr 2023</time>
+                        </p>
+                        <span class="experience-marker" aria-hidden="true"></span>
+                        <div class="experience-content">
+                            <h3>
+                                <a href="https://www.utexas.edu/">The University of Texas at Austin</a>
+                            </h3>
+                            <p class="experience-role">
+                                Visiting PhD Student
+                                (<a href="https://www.cs.utexas.edu/~pstone/">LARG</a>)
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <p class="experience-date">
+                            <time datetime="2022-03">Mar 2022</time> &ndash;
+                            <time datetime="2022-08">Aug 2022</time>
+                        </p>
+                        <span class="experience-marker" aria-hidden="true"></span>
+                        <div class="experience-content">
+                            <h3><a href="https://deepmind.google/">Google DeepMind</a></h3>
+                            <p class="experience-role">Student Researcher, Robotics</p>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <p class="experience-date">
+                            <time datetime="2020-08">Aug 2020</time> &ndash;
+                            <time datetime="2024-05">May 2024</time>
+                        </p>
+                        <span class="experience-marker" aria-hidden="true"></span>
+                        <div class="experience-content">
+                            <h3>
+                                <a href="https://www.binghamton.edu/computer-science/">
+                                    State University of New York at Binghamton
+                                </a>
+                            </h3>
+                            <p class="experience-role">
+                                PhD in Computer Science
+                                (<a href="https://bu-air-lab.github.io/">AIR</a>)
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <p class="experience-date">
+                            <time datetime="2015-09">Sep 2015</time> &ndash;
+                            <time datetime="2019-05">May 2019</time>
+                        </p>
+                        <span class="experience-marker" aria-hidden="true"></span>
+                        <div class="experience-content">
+                            <h3><a href="https://en.ruc.edu.cn/">Renmin University of China</a></h3>
+                            <p class="experience-role">B.Eng. in Computer Science</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="research site-view" id="publications" data-view="publications"
+            aria-labelledby="research-title">
+            <div class="research-inner">
+                <header class="research-intro">
+                    <h2 id="research-title">Publications</h2>
+                    <p class="publication-legend">
+                        * Equal contribution. &dagger; Equal advising.
+                    </p>
+                </header>
+
+                <!-- Google Scholar lists 28 records. Direct versions are consolidated into 24 work entries:
+                     LLM-GROP (3 records), DKPrompt (2), COWP (2), and MEAL (2). -->
+                <div class="publication-list">
+                    <p class="timeline-year">2026</p>
+                    <article class="publication">
+                        <p class="publication-year">2026</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/simify.mp4"
+                                poster="images/simify.jpg" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Test-Time Spatial Reasoning for Robot Manipulation Using Generative Real-to-Sim
+                            </h3>
+                            <p class="publication-authors">
+                                Ivan Kapelyukh, Yafei Hu, Ran Gong, Brandon May, Tushar Kusnur, Laura Herlant,
+                                Karl Schmeckpeper, Edward Johns<sup>&dagger;</sup>,
+                                <strong>Xiaohan Zhang<sup>&dagger;</sup></strong>
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>
+                                (<strong>IROS</strong>), 2026
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="pdfs/simify.pdf">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2026</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/vap-tamp.mp4"
+                                poster="images/vap-tamp.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Robot Planning and Situation Handling with Active Perception
+                            </h3>
+                            <p class="publication-authors">
+                                Austine Oloo, Zainab Altaweel, Yohei Hayamizu, Peiqi Liu, Yan Ding, Saeid Amiri,
+                                Hao Yang, Andy Kaminski, Chad Esselink, Chris Paxton,
+                                <strong>Xiaohan Zhang</strong>, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>
+                                (<strong>IROS</strong>), 2026
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://vap-tamp.github.io/vap-tamp/">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2604.26988">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2026</p>
+                        <div class="publication-media">
+                            <img src="images/world-action-models.jpg" alt="World-action model sim-to-real examples"
+                                width="690" height="524" loading="lazy" decoding="async">
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Efficient Sim-to-Real Transfer of World-Action Models from Synthetic Priors
+                            </h3>
+                            <p class="publication-authors">
+                                Zixing Wang, Kausik Sivakumar, Jinghuan Shang, Yafei Hu, Zhaoming Xie,
+                                Ran Gong<sup>&dagger;</sup>, <strong>Xiaohan Zhang<sup>&dagger;</sup></strong>,
+                                Karl Schmeckpeper<sup>&dagger;</sup>
+                            </p>
+                            <p class="publication-venue"><em>CVPR Embodied AI Workshop</em>, 2026</p>
+                            <ul class="publication-links">
+                                <li><a href="https://arxiv.org/abs/2606.31101">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2026</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/prism.mp4"
+                                poster="images/prism.png" width="480" height="270" muted loop playsinline preload="none"
+                                aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Scaling Short-Term Memory of Visuomotor Policies for Long-Horizon Tasks
+                            </h3>
+                            <p class="publication-authors">
+                                Rutav Shah, Rajat Kumar Jenamani, <strong>Xiaohan Zhang</strong>, Lingfeng Sun,
+                                Roberto Mart&iacute;n-Mart&iacute;n, Yuke Zhu, Deva Ramanan, Karl Schmeckpeper
+                            </p>
+                            <p class="publication-venue"><em>Preprint</em>, 2026</p>
+                            <ul class="publication-links">
+                                <li><a href="https://shahrutav.github.io/short-term-memory">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2606.16178">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2026</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/expertgen.mp4"
+                                poster="images/expertgen.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                ExpertGen: Scalable Sim-to-Real Expert Policy Learning from Imperfect Behavior
+                                Priors
+                            </h3>
+                            <p class="publication-authors">
+                                Zifan Xu, Ran Gong, Maria Vittoria Minniti, Kausik Sivakumar, Ahmet Salih Gundogdu,
+                                Eric Rosen, Riedana Yan, Tushar Kusnur, Zixing Wang, Di Deng, Peter Stone,
+                                <strong>Xiaohan Zhang<sup>&dagger;</sup></strong>,
+                                Karl Schmeckpeper<sup>&dagger;</sup>
+                            </p>
+                            <p class="publication-venue"><em>Preprint</em>, 2026</p>
+                            <ul class="publication-links">
+                                <li><a href="https://pages.rai-inst.com/expertgen/">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2603.15956">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2026</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/golden-ticket.mp4"
+                                poster="images/golden-ticket.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                You've Got a Golden Ticket: Improving Generative Robot Policies With A Single
+                                Noise Vector
+                            </h3>
+                            <p class="publication-authors">
+                                Omkar Patil, Ondrej Biza, Thomas Weng, Karl Schmeckpeper, Wil Thomason,
+                                <strong>Xiaohan Zhang</strong>, Kausik Sivakumar, Robin Walters, Nakul Gopalan,
+                                Sebastian Castro, Stephen Hart, Eric Rosen
+                            </p>
+                            <p class="publication-venue"><em>Preprint</em>, 2026</p>
+                            <ul class="publication-links">
+                                <li><a href="https://lottery-tickets.rai-inst.com/">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2603.15757">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2026</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/zerobot.mp4"
+                                poster="images/zerobot.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                ZeroBot: Learning from Scratch in Minutes with Generative Real2Sim
+                            </h3>
+                            <p class="publication-authors">
+                                Ivan Kapelyukh, <strong>Xiaohan Zhang</strong>, Stephen James, Laura Herlant, Edward
+                                Johns
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE Robotics and Automation Letters</em> (<strong>RA-L</strong>), 2026
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://ieeexplore.ieee.org/abstract/document/11373870/">IEEE</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <p class="timeline-year">2025</p>
+                    <article class="publication">
+                        <p class="publication-year">2025</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/anytask.mp4"
+                                poster="images/anytask.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                AnyTask: an Automated Task and Data Generation Framework for Advancing Sim-to-Real
+                                Policy Learning
+                            </h3>
+                            <p class="publication-authors">
+                                Ran Gong<sup>*</sup>, <strong>Xiaohan Zhang<sup>*</sup></strong>,
+                                Jinghuan Shang<sup>*</sup>, Maria Vittoria Minniti<sup>*</sup>, Jigarkumar Patel,
+                                Valerio Pepe, Riedana Yan, Ahmet Gundogdu, Ivan Kapelyukh, Ali Abbas, Xiaoqiang Yan,
+                                Harsh Patel, Laura Herlant, Karl Schmeckpeper
+                            </p>
+                            <p class="publication-venue"><em>Preprint</em>, 2025</p>
+                            <ul class="publication-links">
+                                <li><a href="https://anytask.rai-inst.com">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2512.17853">arXiv</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2025</p>
+                        <div class="publication-media">
+                            <img src="images/dagger.png" alt="Data-Efficient Multitask DAgger overview" width="654"
+                                height="264" loading="lazy" decoding="async">
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Data-Efficient Multitask DAgger
+                            </h3>
+                            <p class="publication-authors">
+                                Haotian Fu, Ran Gong, <strong>Xiaohan Zhang</strong>, Maria Vittoria Minniti, Jigarkumar
+                                Patel, Karl Schmeckpeper
+                            </p>
+                            <p class="publication-venue"><em>Preprint</em>, 2025</p>
+                            <ul class="publication-links">
+                                <li><a href="https://arxiv.org/abs/2509.25466">arXiv</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2025</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/particleformer.mp4"
+                                poster="images/particleformer.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                ParticleFormer: A 3D Point Cloud World Model for Multi-Object, Multi-Material
+                                Robotic Manipulation
+                            </h3>
+                            <p class="publication-authors">
+                                Suning Huang, Qianzhong Chen, <strong>Xiaohan Zhang</strong>, Jiankai Sun, Mac Schwager
+                            </p>
+                            <p class="publication-venue">
+                                <em>Conference on Robot Learning</em> (<strong>CoRL</strong>), 2025
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://suninghuang19.github.io/particleformer_page/">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2506.23126">arXiv</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2025</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/llm-grop.mp4"
+                                poster="images/llm-grop.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                LLM-GROP: Visually Grounded Robot Task and Motion Planning with Large Language
+                                Models
+                            </h3>
+                            <p class="publication-authors">
+                                <strong>Xiaohan Zhang<sup>*</sup></strong>, Yan Ding<sup>*</sup>,
+                                Yohei Hayamizu<sup>*</sup>, Zainab Altaweel<sup>*</sup>, Yifeng Zhu, Yuke Zhu,
+                                Peter Stone, Chris Paxton, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <em>The International Journal of Robotics Research</em> (<strong>IJRR</strong>),
+                                2025<br>
+                                Extended from <strong>IROS</strong>, 2023 and <strong>ICRA</strong>, 2022
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://sites.google.com/view/llm-grop">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2511.07727">Journal paper</a></li>
+                                <li><a href="https://arxiv.org/abs/2303.06247">IROS version</a></li>
+                                <li><a href="https://arxiv.org/abs/2202.10667">ICRA version</a></li>
+                                <li>
                                     <a
-                                        href="https://ai.meta.com/blog/openeqa-embodied-question-answering-robotics-ar-glasses/">blog
-                                        post</a>
-                                    /
-                                    <a href="https://open-eqa.github.io/assets/pdfs/paper.pdf">paper</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/s30.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://arxiv.org/pdf/2307.11889.pdf">
-                                        <span class="papertitle">Symbolic State Space Optimization for Long Horizon
-                                            Mobile Manipulation Planning</span>
+                                        href="https://colab.research.google.com/drive/1cSqoSc6Gk9KM9p-GwHSIIL5VfZICGW3B?usp=sharing">
+                                        Code
                                     </a>
-                                    <br>
-                                    <strong>Xiaohan Zhang</strong>,
-                                    <a href="https://zhuyifengzju.github.io/">Yifeng Zhu</a>,
-                                    <a href="https://yding25.com/">Yan Ding</a>,
-                                    <a href="https://yuqianjiang.us/">Yuqian Jiang</a>,
-                                    <a href="https://yukezhu.me/">Yuke Zhu</a>, <br>
-                                    <a href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a>,
-                                    <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a>
-                                    <br>
-                                    <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>
-                                    (<strong>IROS</strong>), 2023
-                                    <br>
-                                    <a href="https://sites.google.com/view/s3o">project page</a>
-                                    /
-                                    <a href="https://arxiv.org/pdf/2307.11889">arXiv</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
 
+                    <p class="timeline-year">2024</p>
+                    <article class="publication">
+                        <p class="publication-year">2024</p>
+                        <div class="publication-media">
+                            <img src="images/thesis.png" alt="Symbol grounding dissertation overview" width="1114"
+                                height="539" loading="lazy" decoding="async">
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Symbol Grounding for Task and Motion Planning in Robotics
+                            </h3>
+                            <p class="publication-authors"><strong>Xiaohan Zhang</strong></p>
+                            <p class="publication-venue">
+                                <em>PhD Dissertation, State University of New York at Binghamton</em>, 2024
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="pdfs/dissertation.pdf">Dissertation</a></li>
+                            </ul>
+                        </div>
+                    </article>
 
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/llm-grop.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://arxiv.org/pdf/2303.06247.pdf">
-                                        <span class="papertitle">Task and Motion Planning with Large Language Models for
-                                            Object Rearrangement</span>
-                                    </a>
-                                    <br>
-                                    <a href="https://yding25.com/">Yan Ding*</a>,
-                                    <strong>Xiaohan Zhang*</strong>,
-                                    <a href="https://cpaxton.github.io/about/">Chris Paxton</a>,
-                                    <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a>
-                                    <br>
-                                    <em><strong>The International Journal of Robotics Research</strong></em>
-                                    (<strong>IJRR</strong>), 2025
-                                    <br>
-                                    <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>
-                                    (<strong>IROS</strong>), 2023
-                                    <br>
-                                    <a href="https://sites.google.com/view/llm-grop">project page</a>
-                                    /
-                                    <a href="https://arxiv.org/pdf/2303.06247.pdf">arXiv</a>
-                                    /
+                    <article class="publication">
+                        <p class="publication-year">2024</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/dkprompt.mp4"
+                                poster="images/dkprompt.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                DKPrompt: Domain Knowledge Prompting Vision-Language Models for Open-World Planning
+                            </h3>
+                            <p class="publication-authors">
+                                <strong>Xiaohan Zhang</strong>, Zainab Altaweel<sup>*</sup>,
+                                Yohei Hayamizu<sup>*</sup>, Yan Ding, Saeid Amiri, Hao Yang, Andy Kaminski,
+                                Chad Esselink, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <em>CVPR Embodied AI Workshop</em>, 2024<br>
+                                <em>ICRA Workshop on Robot Execution Failures</em>, 2023
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://dkprompt.github.io">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2406.17659">arXiv</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2024</p>
+                        <div class="publication-media publication-video">
+                            <video data-publication-preview data-src="images/publication-previews/openeqa.mp4"
+                                poster="images/openeqa.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                OpenEQA: Embodied Question Answering in the Era of Foundation Models
+                            </h3>
+                            <p class="publication-authors">
+                                Arjun Majumdar<sup>*</sup>, Anurag Ajay<sup>*</sup>,
+                                <strong>Xiaohan Zhang<sup>*</sup></strong>, Pranav Putta, Sriram Yenamandra,
+                                Mikael Henaff, Sneha Silwal, Paul Mcvay, Oleksandr Maksymets, Sergio Arnaud,
+                                Karmesh Yadav, Qiyang Li, Ben Newman, Mohit Sharma, Vincent Berges, Shiqi Zhang,
+                                Pulkit Agrawal, Yonatan Bisk, Dhruv Batra, Mrinal Kalakrishnan, Franziska Meier,
+                                Chris Paxton, Sasha Sax, Aravind Rajeswaran
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>
+                                (<strong>CVPR</strong>), 2024
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://open-eqa.github.io/">Project page</a></li>
+                                <li>
                                     <a
-                                        href="https://colab.research.google.com/drive/1cSqoSc6Gk9KM9p-GwHSIIL5VfZICGW3B?usp=sharing">code</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/meal.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
+                                        href="https://ai.meta.com/blog/openeqa-embodied-question-answering-robotics-ar-glasses/">
+                                        Blog post
+                                    </a>
+                                </li>
+                                <li><a href="https://open-eqa.github.io/assets/pdfs/paper.pdf">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <p class="timeline-year">2023</p>
+                    <article class="publication">
+                        <p class="publication-year">2023</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/cowp.mp4"
+                                poster="images/cowp_overview.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Integrating Action Knowledge and LLMs for Task Planning and Situation Handling in
+                                Open Worlds
+                            </h3>
+                            <p class="publication-authors">
+                                Yan Ding, <strong>Xiaohan Zhang</strong>, Saeid Amiri, Nieqing Cao, Hao Yang,
+                                Andy Kaminski, Chad Esselink, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue"><strong>Autonomous Robots</strong>, 2023</p>
+                            <ul class="publication-links">
+                                <li><a href="https://cowplanning.github.io/">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2305.17590">Paper</a></li>
+                                <li><a href="https://arxiv.org/abs/2210.01287">Earlier version</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2023</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/slap.mp4"
+                                poster="images/slap.png" width="480" height="270" muted loop playsinline preload="none"
+                                aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                SLAP: Spatial-Language Attention Policies
+                            </h3>
+                            <p class="publication-authors">
+                                Priyam Parashar, Vidhi Jain, <strong>Xiaohan Zhang</strong>, Jay Vakil, Sam Powers,
+                                Yonatan Bisk, Chris Paxton
+                            </p>
+                            <p class="publication-venue">
+                                <em>Conference on Robot Learning</em> (<strong>CoRL</strong>), 2023
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://robotslap.github.io/">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2304.11235">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2023</p>
+                        <div class="publication-media">
+                            <img src="images/llmp.png" alt="LLM+P planning framework overview" width="2280"
+                                height="1450" loading="lazy" decoding="async">
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                LLM+P: Empowering Large Language Models with Optimal Planning Proficiency
+                            </h3>
+                            <p class="publication-authors">
+                                Bo Liu<sup>*</sup>, Yuqian Jiang<sup>*</sup>, <strong>Xiaohan Zhang</strong>,
+                                Qiang Liu, Shiqi Zhang, Joydeep Biswas, Peter Stone
+                            </p>
+                            <p class="publication-venue"><em>Preprint</em>, 2023</p>
+                            <ul class="publication-links">
+                                <li><a href="https://arxiv.org/abs/2304.11477">Paper</a></li>
+                                <li><a href="https://github.com/Cranial-XIX/llm-pddl">Code</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2023</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/s3o.mp4"
+                                poster="images/s30.png" width="480" height="270" muted loop playsinline preload="none"
+                                aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Symbolic State Space Optimization for Long Horizon Mobile Manipulation Planning
+                            </h3>
+                            <p class="publication-authors">
+                                <strong>Xiaohan Zhang</strong>, Yifeng Zhu, Yan Ding, Yuqian Jiang, Yuke Zhu,
+                                Peter Stone, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>
+                                (<strong>IROS</strong>), 2023
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://sites.google.com/view/s3o">Project page</a></li>
+                                <li><a href="https://arxiv.org/pdf/2307.11889">arXiv</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2023</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/meal.mp4"
+                                poster="images/meal.png" width="480" height="270" muted loop playsinline preload="none"
+                                aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Multimodal Embodied Attribute Learning by Robots for Object-Centric Action Policies
+                            </h3>
+                            <p class="publication-authors">
+                                <strong>Xiaohan Zhang</strong>, Saeid Amiri, Jivko Sinapov, Jesse Thomason,
+                                Peter Stone, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <strong>Autonomous Robots</strong>, 2023<br>
+                                Extended from <em>Robotics: Science and Systems</em>
+                                (<strong>RSS</strong>), 2021
+                            </p>
+                            <ul class="publication-links">
+                                <li>
+                                    <a href="https://sites.google.com/view/attribute-learning-robotics/">Project page</a>
+                                </li>
+                                <li>
                                     <a href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/AURO23.pdf">
-                                        <span class="papertitle">Multimodal Embodied Attribute Learning by Robots for
-                                            Object-Centric Action Policies</span>
+                                        Paper
                                     </a>
-                                    <br>
-                                    <strong>Xiaohan Zhang</strong>,
-                                    <a href="https://scholar.google.com/citations?user=zOfE-oUAAAAJ&hl=zh-CN">Saeid
-                                        Amiri</a>,
-                                    <a href="https://www.eecs.tufts.edu/~jsinapov/">Jivko Sinapov</a>,
-                                    <a href="https://jessethomason.com/">Jesse Thomason</a>, <br>
-                                    <a href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a>,
-                                    <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a>
-                                    <br>
-                                    <em><strong>Autonomous Robots</strong></em>, 2023
-                                    <br>
-                                    <em>Robotics: Science and Systems (<strong>RSS</strong>)</em>, 2021
-                                    <br>
-                                    <a href="https://sites.google.com/view/attribute-learning-robotics/">project
-                                        page</a>
-                                    /
-                                    <a
-                                        href="https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/AURO23.pdf">paper</a>
-                                    /
-                                    <a href="https://link.springer.com/article/10.1007/s10514-023-10098-5">Springer
-                                        Nature official</a>
-                                    /
-                                    <a href="https://arxiv.org/pdf/2106.03029.pdf">RSS version</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:20px;width:25%;vertical-align:middle">
-                                    <img src="images/grop_real.png" width="160">
-                                </td>
-                                <td style="padding:20px;width:75%;vertical-align:middle">
-                                    <a href="https://arxiv.org/pdf/2202.10667.pdf">
-                                        <span class="papertitle">Visually Grounded Task and Motion Planning for Mobile
-                                            Manipulation</span>
+                                </li>
+                                <li>
+                                    <a href="https://link.springer.com/article/10.1007/s10514-023-10098-5">Springer</a>
+                                </li>
+                                <li><a href="https://arxiv.org/pdf/2106.03029.pdf">RSS version</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2023</p>
+                        <div class="publication-media">
+                            <video data-publication-preview
+                                data-src="images/publication-previews/robotic-table-wiping.mp4"
+                                poster="images/wiping.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Robotic Table Wiping via Reinforcement Learning and Whole-body Trajectory
+                                Optimization
+                            </h3>
+                            <p class="publication-authors">
+                                Thomas Lew, Sumeet Singh, Mario Prats, Jeffrey Bingham, Jonathan Weisz, Benjie Holson,
+                                <strong>Xiaohan Zhang</strong>, Vikas Sindhwani, Yao Lu, Fei Xia, Peng Xu,
+                                Tingnan Zhang, Jie Tan, Montserrat Gonzalez
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE International Conference on Robotics and Automation</em>
+                                (<strong>ICRA</strong>), 2023
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://arxiv.org/abs/2210.10865">Paper</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=inORKP4F3EI">Video</a></li>
+                                <li>
+                                    <a href="https://ai.googleblog.com/2023/04/towards-ml-enabled-cleaning-robots.html">
+                                        Blog post
                                     </a>
-                                    <br>
-                                    <strong>Xiaohan Zhang</strong>,
-                                    <a href="https://zhuyifengzju.github.io/">Yifeng Zhu</a>,
-                                    <a href="https://yding25.com/">Yan Ding</a>,
-                                    <a href="https://yukezhu.me/">Yuke Zhu</a>,
-                                    <a href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a>,
-                                    <a href="https://www.cs.binghamton.edu/~szhang/">Shiqi Zhang</a>
-                                    <br>
-                                    <em>IEEE International Conference on Robotics and Automation</em>
-                                    (<strong>ICRA</strong>), 2022
-                                    <br>
-                                    <a href="https://sites.google.com/view/grop-tamp">project page</a>
-                                    /
-                                    <a href="https://arxiv.org/pdf/2202.10667.pdf">arXiv</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr>
-                                <td style="padding:0px">
-                                    <br>
-                                    <p style="text-align:center;font-size:small;">
-                                        Website template stolen from <a
-                                            href="https://github.com/jonbarron/jonbarron_website">here</a>.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <p class="timeline-year">2022</p>
+                    <article class="publication">
+                        <p class="publication-year">2022</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/glad.mp4"
+                                poster="images/tmpudv.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                GLAD: Grounded Layered Autonomous Driving for Complex Service Tasks
+                            </h3>
+                            <p class="publication-authors">
+                                Yan Ding, Cheng Cui, <strong>Xiaohan Zhang</strong>, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue"><em>Preprint</em>, 2022</p>
+                            <ul class="publication-links">
+                                <li><a href="https://yding25.com/proj/GLAD/index.html">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2210.02302">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <p class="publication-year">2022</p>
+                        <div class="publication-media">
+                            <video data-publication-preview data-src="images/publication-previews/tmoc.mp4"
+                                poster="images/tmoc_overview.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Learning to Ground Objects for Robot Task and Motion Planning
+                            </h3>
+                            <p class="publication-authors">
+                                Yan Ding, <strong>Xiaohan Zhang</strong>, Xingyue Zhan, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE Robotics and Automation Letters</em> (<strong>RA-L</strong>), 2022
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://yding25.com/proj/TMOC/TMOC.html">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2202.06674">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <p class="timeline-year">2021</p>
+                    <article class="publication">
+                        <p class="publication-year">2021</p>
+                        <div class="publication-media">
+                            <video data-publication-preview
+                                data-src="images/publication-previews/360-vision-attention.mp4"
+                                poster="images/360_conf.png" width="480" height="270" muted loop playsinline
+                                preload="none" aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Learning to Guide Human Attention on Mobile Telepresence Robots with 360 Vision
+                            </h3>
+                            <p class="publication-authors">
+                                Kishan Chandan, Jack Albertson, <strong>Xiaohan Zhang</strong>, Xiaoyang Zhang,
+                                Yao Liu, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>
+                                (<strong>IROS</strong>), 2021
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://arxiv.org/abs/2109.10385">Paper</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=aGbTxCGJSDM">Video</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <p class="timeline-year">2020</p>
+                    <article class="publication">
+                        <p class="publication-year">2020</p>
+                        <div class="publication-media">
+                            <video data-publication-preview
+                                data-src="images/publication-previews/task-motion-planning-urban-driving.mp4"
+                                poster="images/tmpud.png" width="480" height="270" muted loop playsinline preload="none"
+                                aria-hidden="true"></video>
+                        </div>
+                        <div class="publication-content">
+                            <h3>
+                                Task-Motion Planning for Safe and Efficient Urban Driving
+                            </h3>
+                            <p class="publication-authors">
+                                Yan Ding, <strong>Xiaohan Zhang</strong>, Xingyue Zhan, Shiqi Zhang
+                            </p>
+                            <p class="publication-venue">
+                                <em>IEEE/RSJ International Conference on Intelligent Robots and Systems</em>
+                                (<strong>IROS</strong>), 2020
+                            </p>
+                            <ul class="publication-links">
+                                <li><a href="https://yding25.com/TMPUD/website/TMPUD.html">Project page</a></li>
+                                <li><a href="https://arxiv.org/abs/2003.03807">Paper</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 
 </html>
